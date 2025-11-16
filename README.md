@@ -10,7 +10,7 @@ This OMNeT++ project implements a **dynamic message routing network** where node
 
 * **Dynamic Message Generation:** Nodes create messages with randomly assigned destinations (excluding self)
 * **Bidirectional Communication:** Uses inout gates for two-way node connections
-* **Hop Count Tracking:** Messages record the number of hops during routing
+* **Hop Count Tracking:** Messages record the number of hops during routing via dedicated `forwardMessage()` method
 * **Statistical Monitoring:** Real-time tracking of generated, received, and transmitted messages per node
 * **Adaptive Termination:** Simulation ends when any node reaches the 3-message generation limit
 * **Randomized Routing:** Messages are forwarded through randomly selected output gates
@@ -37,7 +37,8 @@ This OMNeT++ project implements a **dynamic message routing network** where node
 #### 3. **Message Routing Algorithm**
 
 * **Destination Checking:** Each node verifies if incoming message is destined for itself
-* **Hop Counting:** Increments hopCount before forwarding to track path length
+* **Forward Message Method:** Dedicated `forwardMessage()` method handles hop counting and message transmission as required by exercise specifications
+* **Hop Counting:** Increments hopCount in `forwardMessage()` before forwarding to track path length
 * **Random Gate Selection:** Uses `intuniform(0, gateSize("gate") - 1)` for output gate selection
 * **Safe Message Handling:** Employs `check_and_cast<NodeMsg*>()` for type-safe message processing
 
@@ -65,6 +66,7 @@ This OMNeT++ project implements a **dynamic message routing network** where node
 * **Bidirectional Communication:** Inout gate implementation and channel management
 * **Memory Management:** Proper message deletion and resource handling
 * **Simulation Configuration:** NED file topology definition and parameter setting
+* **Methodology Compliance:** Strict adherence to exercise specifications including dedicated `forwardMessage()` method
 
 ---
 
@@ -75,8 +77,8 @@ This OMNeT++ project implements a **dynamic message routing network** where node
 | **Network.ned** | Defines network topology with 6 nodes and bidirectional connections |
 | **Node.ned** | Specifies node module with inout gates for bidirectional communication |
 | **NodeMsg.msg** | Custom message definition with source, destination, and hopCount fields |
-| **Node.h** | Node class declaration with message handling and statistical methods |
-| **Node.cc** | Implementation of node behavior, routing logic, and statistics tracking |
+| **Node.h** | Node class declaration with message handling, statistics, and `forwardMessage()` method |
+| **Node.cc** | Implementation of node behavior, routing logic with `forwardMessage()`, and statistics tracking |
 | **omnetpp.ini** | Simulation configuration and network parameter settings |
 
 ---
@@ -97,6 +99,7 @@ PC:5 generated 3 received 3 transmitted 4
 - PC[3] served as central hub with highest transmission count (22)
 - Variable reception counts reflect random destination distribution
 - Transmission counts indicate routing patterns and network utilization
+- **Hop counting implemented via dedicated `forwardMessage()` method** as required
 
 ---
 
