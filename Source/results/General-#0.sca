@@ -1,8 +1,8 @@
 version 3
-run General-0-20251116-16:53:08-262322
+run General-0-20251116-17:07:51-294619
 attr configname General
-attr datetime 20251116-16:53:08
-attr datetimef 20251116-165308
+attr datetime 20251116-17:07:51
+attr datetimef 20251116-170751
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Network
-attr processid 262322
+attr processid 294619
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -18,76 +18,88 @@ attr runnumber 0
 attr seedset 0
 config network Network
 
-par Network.PC[0].gate$o[0].channel typename "\"ned.DelayChannel\""
+par Network.PC[0].gate$o[0].channel typename "\"Network.Channel\""
 par Network.PC[0].gate$o[0].channel disabled false
 attr mutable ""
 par Network.PC[0].gate$o[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[1].gate$o[0].channel typename "\"ned.DelayChannel\""
+par Network.PC[1].gate$o[0].channel typename "\"Network.Channel\""
 par Network.PC[1].gate$o[0].channel disabled false
 attr mutable ""
 par Network.PC[1].gate$o[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[0].gate$o[1].channel typename "\"ned.DelayChannel\""
+par Network.PC[0].gate$o[1].channel typename "\"Network.Channel\""
 par Network.PC[0].gate$o[1].channel disabled false
 attr mutable ""
 par Network.PC[0].gate$o[1].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[2].gate$o[0].channel typename "\"ned.DelayChannel\""
-par Network.PC[2].gate$o[0].channel disabled false
-attr mutable ""
-par Network.PC[2].gate$o[0].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Network.PC[1].gate$o[1].channel typename "\"ned.DelayChannel\""
-par Network.PC[1].gate$o[1].channel disabled false
-attr mutable ""
-par Network.PC[1].gate$o[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Network.PC[3].gate$o[0].channel typename "\"ned.DelayChannel\""
+par Network.PC[3].gate$o[0].channel typename "\"Network.Channel\""
 par Network.PC[3].gate$o[0].channel disabled false
 attr mutable ""
 par Network.PC[3].gate$o[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[2].gate$o[1].channel typename "\"ned.DelayChannel\""
-par Network.PC[2].gate$o[1].channel disabled false
+par Network.PC[1].gate$o[1].channel typename "\"Network.Channel\""
+par Network.PC[1].gate$o[1].channel disabled false
 attr mutable ""
-par Network.PC[2].gate$o[1].channel delay 0.1s
-attr mutable ""
-attr unit s
-par Network.PC[3].gate$o[1].channel typename "\"ned.DelayChannel\""
-par Network.PC[3].gate$o[1].channel disabled false
-attr mutable ""
-par Network.PC[3].gate$o[1].channel delay 0.1s
+par Network.PC[1].gate$o[1].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[3].gate$o[2].channel typename "\"ned.DelayChannel\""
-par Network.PC[3].gate$o[2].channel disabled false
+par Network.PC[2].gate$o[0].channel typename "\"Network.Channel\""
+par Network.PC[2].gate$o[0].channel disabled false
 attr mutable ""
-par Network.PC[3].gate$o[2].channel delay 0.1s
+par Network.PC[2].gate$o[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[4].gate$o[0].channel typename "\"ned.DelayChannel\""
+par Network.PC[1].gate$o[2].channel typename "\"Network.Channel\""
+par Network.PC[1].gate$o[2].channel disabled false
+attr mutable ""
+par Network.PC[1].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Network.PC[4].gate$o[0].channel typename "\"Network.Channel\""
 par Network.PC[4].gate$o[0].channel disabled false
 attr mutable ""
 par Network.PC[4].gate$o[0].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[3].gate$o[3].channel typename "\"ned.DelayChannel\""
-par Network.PC[3].gate$o[3].channel disabled false
+par Network.PC[2].gate$o[1].channel typename "\"Network.Channel\""
+par Network.PC[2].gate$o[1].channel disabled false
 attr mutable ""
-par Network.PC[3].gate$o[3].channel delay 0.1s
+par Network.PC[2].gate$o[1].channel delay 0.1s
 attr mutable ""
 attr unit s
-par Network.PC[5].gate$o[0].channel typename "\"ned.DelayChannel\""
+par Network.PC[3].gate$o[1].channel typename "\"Network.Channel\""
+par Network.PC[3].gate$o[1].channel disabled false
+attr mutable ""
+par Network.PC[3].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Network.PC[2].gate$o[2].channel typename "\"Network.Channel\""
+par Network.PC[2].gate$o[2].channel disabled false
+attr mutable ""
+par Network.PC[2].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Network.PC[5].gate$o[0].channel typename "\"Network.Channel\""
 par Network.PC[5].gate$o[0].channel disabled false
 attr mutable ""
 par Network.PC[5].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Network.PC[4].gate$o[1].channel typename "\"Network.Channel\""
+par Network.PC[4].gate$o[1].channel disabled false
+attr mutable ""
+par Network.PC[4].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Network.PC[5].gate$o[1].channel typename "\"Network.Channel\""
+par Network.PC[5].gate$o[1].channel disabled false
+attr mutable ""
+par Network.PC[5].gate$o[1].channel delay 0.1s
 attr mutable ""
 attr unit s
 par Network.PC[0] typename "\"Node\""
