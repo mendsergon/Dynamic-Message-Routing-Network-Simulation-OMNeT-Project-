@@ -17,6 +17,7 @@ class Node : public cSimpleModule
     // Helper methods
     int getRandomDestination(int exclude);
     NodeMsg* generateMessage();
+    void forwardMessage(NodeMsg* msg);
 
   protected:
     // OMNeT++ simulation methods

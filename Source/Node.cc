@@ -47,6 +47,19 @@ NodeMsg* Node::generateMessage()
     return msg;
 }
 
+void Node::forwardMessage(NodeMsg* msg)
+{
+    // Increment hop count befire sending as requested
+    msg->setHopCount(msg->getHopCount() + 1);
+    messagesTransmitted++;
+
+    // Send through random gate
+    int k = intuniform(0, gateSize("gate") - 1);
+    send(msg, "gate$o", k);
+
+    EV << "Node " << getIndex() << " forwarding to node " << msg->getDestination() << " via gate " << k << endl;
+}
+
 void Node::handleMessage(cMessage* rawMsg)
 {
     NodeMsg* msg = check_and_cast<NodeMsg*>(rawMsg);
@@ -64,15 +77,7 @@ void Node::handleMessage(cMessage* rawMsg)
         }
     }
     else {
-        // Forward message to next node
-        msg->setHopCount(msg->getHopCount() + 1);
-        messagesTransmitted++;
-
-        // Send through random gate
-        int k = intuniform(0, gateSize("gate") - 1);
-        send(msg, "gate$o", k);
-
-        EV << "Node " << getIndex() << " forwarding to node " << msg->getDestination() << " via gate " << k << endl;
+        forwardMessage(msg);
     }
 
     // Generate additional message if under limit
